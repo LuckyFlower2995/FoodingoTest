@@ -1,5 +1,9 @@
+import { AppRegistry } from 'react-native';
+import App from './App';
+import { name as appName } from './app.json';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBrb8EyJ9-8yC95DQd-rL_3xROACjr3eew",
@@ -12,5 +16,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig); // Initalizes app firebase config
 const db = getFirestore(app);
+
+AppRegistry.registerComponent(appName, () => App);
 
 export default db;
